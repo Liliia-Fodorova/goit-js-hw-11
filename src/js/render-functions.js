@@ -10,9 +10,6 @@ const lightbox = new SimpleLightbox('.gallery a', {
 });
 
 export function createGallery(images) {
-    // delete
-    console.log(images);
-    console.log(images.length);
 
     const markup = images.map(image => `
         <li class="gallery-item">
