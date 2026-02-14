@@ -1,4 +1,4 @@
-console.log('main.js');
+import './css/styles.css';
 
 import { getImagesByQuery } from './js/pixabay-api';
 import {
