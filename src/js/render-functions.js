@@ -1,12 +1,12 @@
 import SimpleLightbox from 'simpleLightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
+import 'Simplelightbox/dist/simple-lightbox.min.css';
 
 const galleryEl = document.querySelector('.gallery');
 const loaderEl = document.querySelector('.loader');
 
 const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
-    captionsDelay: 250,
+    captionDelay: 250,
 });
 
 export function createGallery(images) {
@@ -14,13 +14,12 @@ export function createGallery(images) {
     console.log(images);
     console.log(images.length);
 
-    const markup = images.map(image =>
-        <li class="galery-item">
+    const markup = images.map(image => `
+        <li class="gallery-item">
             <a href="${image.largeImageURL}">
                 <img src="${image.webformatURL}"
                     alt="${image.tags}"
-                    loading="lazy"
-                />
+                    loading="lazy"/>
             </a>
             <div class="info">
                 <p><strong>Likes</strong> ${image.likes}</p>
@@ -30,8 +29,8 @@ export function createGallery(images) {
             </div>
         </li>
         
-    ).join('');
-    gaalleryEl.insertAdjacentHTML('beforeend', markup);
+    `).join('');
+    galleryEl.insertAdjacentHTML('beforeend', markup);
     lightbox.refresh();
 }
 
