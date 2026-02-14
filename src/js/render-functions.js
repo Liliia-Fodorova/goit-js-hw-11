@@ -1,5 +1,5 @@
 import SimpleLightbox from 'simpleLightbox';
-import 'Simplelightbox/dist/simple-lightbox.min.css';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const galleryEl = document.querySelector('.gallery');
 const loaderEl = document.querySelector('.loader');
